@@ -48,7 +48,7 @@ Sample below.
                         <groupId>io.bal.tools.grpc</groupId>
                         <artifactId>gire-mock</artifactId>
                         <version>1.0-SNAPSHOT</version>
-                        <mainClass>io.giremock.generator.mock.MockGenerator</mainClass>
+                        <mainClass>io.MockGenerator</mainClass>
                     </protocPlugin>
                 </protocPlugins>
             </configuration>

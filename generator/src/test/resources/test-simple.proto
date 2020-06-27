@@ -1,0 +1,14 @@
+syntax = "proto3";
+package io.giremock.test.simple;
+option java_package = "io.giremock.test.simple";
+option java_outer_classname = "TestSimpleProto";
+
+message SimpleRequest {
+}
+
+message SimpleResponse {
+}
+
+service TestService {
+  rpc UnaryCall(SimpleRequest) returns (SimpleResponse);
+}
