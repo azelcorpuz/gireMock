@@ -15,10 +15,10 @@ public class Protoc {
     private final String output;
     private final List<ProtocPlugin> plugins;
 
-    public Protoc(String protoDir, List<String> files, String output){
-        this.files = files;
+    public Protoc(String protoDir, List<String> protoFiles, String javaOutputDir){
+        this.files = protoFiles;
         this.dir = protoDir;
-        this.output = output;
+        this.output = javaOutputDir;
         this.plugins = new ArrayList<>();
     }
 

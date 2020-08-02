@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package grpcproj;
+
+option java_package = "org.azl.grpcproj.proto";
+option java_outer_classname = "HelloWorldObjects";
+
+service HelloWorld {
+    rpc SayHello ( HelloRequestProto) returns (  HelloResponseProto) {}
+
+}
+
+message HelloRequestProto {
+    string name = 1;
+}
+
+message HelloResponseProto {
+    string message = 1;
+    string statusCode = 2;
+}

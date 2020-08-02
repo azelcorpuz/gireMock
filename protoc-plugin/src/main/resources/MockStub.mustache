@@ -2,7 +2,6 @@
 package {{packageName}};
 {{/packageName}}
 
-import io.WiremockHelper;
 import com.google.protobuf.InvalidProtocolBufferException;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
@@ -13,26 +12,18 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
-import io.giremock.protoc.helper.GrpcApiData;
+import io.giremock.helper.GrpcApi;
+import io.giremock.helper.RestApi;
+import io.giremock.helper.ServiceMap;
 import com.google.protobuf.util.JsonFormat;
 
 {{#deprecated}}@Deprecated{{/deprecated}}
 @javax.annotation.Generated(
     value = "by gRPC Mock Generator",
     comments = "Source: {{protoName}}")
-public class {{className}} {
-    private {{className}}() {}
 
     {{#javaDoc}}{{{javaDoc}}}{{/javaDoc}}
-    public static final class {{serviceName}}Mock extends {{serviceName}}Grpc.{{serviceName}}ImplBase {
-        private WiremockHelper wireHelper = new WiremockHelper();
-        private String wiremockHost;
-
-        public {{serviceName}}Mock (String wiremockHost, int wiremockPort) {
-            this.wiremockHost = "http://" + wiremockHost + ":" + wiremockPort + "/";
-        }
-
-
+    public final class {{serviceName}}Mock extends {{serviceName}}Grpc.{{serviceName}}ImplBase {
         {{#methods}}
 
             {{#javaDoc}}
@@ -43,8 +34,7 @@ public class {{className}} {
             {{/deprecated}}
         @SuppressWarnings("unchecked")
         public void {{methodName}}({{inputType}} request, io.grpc.stub.StreamObserver<{{outputType}}> responseObserver) {
-            {{content}}
+            {{{content}}}
         }
         {{/methods}}
     }
-}

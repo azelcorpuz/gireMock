@@ -14,8 +14,8 @@ public class GrpcProtoc extends Protoc {
     private static final String PLUGIN_ID = "grpc-java";
     private static final String PLUGIN_EXE = "protoc-gen-grpc-java-1.30.1-osx-x86_64.exe";
 
-    public GrpcProtoc(String dir, List<String> files, String output) {
-        super(dir, files, output);
+    public GrpcProtoc(String protoDir, List<String> protoFiles, String javaOutputDir) {
+        super(protoDir, protoFiles, javaOutputDir);
         addPlugin(build());
     }
 
